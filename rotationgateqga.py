@@ -75,10 +75,11 @@ Z = np.zeros((40, 40))
 for i in range(40):
     for j in range(40):
         Z[i, j] = fitness(np.array([X[i, j], Y[i, j]]))
-
+fig=plt.figure()
 ax = fig.add_subplot(111, projection='3d')
 ax.plot_surface(X, Y, Z, cmap='jet')
 ax.scatter(best_individual[0], best_individual[1], best_fitness, color='red', marker='o')
 ax.set_xlabel('X')
 ax.set_ylabel('Y')
 ax.set_zlabel('Fitness')
+plt.show()
